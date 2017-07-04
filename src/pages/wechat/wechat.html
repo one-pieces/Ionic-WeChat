@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>微信</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let chat of chatList">
+      <ion-thumbnail item-start>
+        <img [src]="chat.thumbnail">
+      </ion-thumbnail>
+      <h2>{{chat.name}}</h2>
+      <p>{{chat.detail}}</p>
+      <div item-end>
+        <ion-grid>
+          <ion-row>
+            <ion-note>{{chat.timestamp}}</ion-note>
+          </ion-row>
+          <ion-row *ngIf="chat.isMute">
+            <ion-icon name="op-mute" class="mute-icon"></ion-icon>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

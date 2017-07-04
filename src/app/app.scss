@@ -14,3 +14,29 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-icon {
+  &[class*='op-'] {
+    // Instead of using the foot-based icons
+    // We're applying SVG masks
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: 50% 50%;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+  // custom icons
+  &[class*='op-wechat'] {
+    -webkit-mask-image: url('../assets/icon/svg/wechat-1.svg');
+  }
+  &[class*='op-contact'] {
+    -webkit-mask-image: url('../assets/icon/svg/contact.svg');
+  }
+  &[class*='op-compass'] {
+    -webkit-mask-image: url('../assets/icon/svg/compass.svg');
+  }
+  &[class*='op-mute'] {
+    -webkit-mask-image: url('../assets/icon/svg/mute.svg');
+  }
+}
